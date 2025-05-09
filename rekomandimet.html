@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekomandimet e Mia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" type="image/x-icon" href="tbu.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        
+        :root {
+    --primary-color: #4b40db;
+    --secondary-color: #32d1c2;
+    --dark-blue: #1e1b4b;
+    --purple: #8b35ea;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-900: #111827;
+}
+
+
+
+
+ /* Navigation */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1a1e3b;
+        color: white;
+        padding: 0.5rem 2rem;
+        position: relative;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+      }
+
+      .logo span {
+        font-weight: 600;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #8ecae6;
+      }
+
+      .get-in-touch {
+        color: #3db4b9;
+        font-weight: 500;
+      }
+/* Profile Header */
+.profile-header {
+    background-color: var(--dark-blue);
+    padding: 2rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.profile-avatar {
+    width: 156px;
+    height: 156px;
+    background: linear-gradient(45deg, #4b40db, #32d1c2);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.profile-name {
+    color: white;
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.profile-school {
+    color: #c5d0fc;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background-color: #3b365f;
+    border: 2px solid #2b2c6c;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 305px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: #c5d0fc;
+    font-size: 1.5rem;
+}
+
+        
+       /* Profile Navigation */
+.profile-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.profile-nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.profile-nav-link.active {
+    color: var(--primary-color);
+}
+        h1 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 20px 100px;
+            color: #333;
+        }
+        
+        .uni-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px 100px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .uni-header {
+            background:#1e1b4b ;
+            color: white;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .uni-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #181c34;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+        }
+        
+        .uni-icon i {
+            color: white;
+            font-size: 16px;
+        }
+        
+        .uni-info {
+            flex: 1;
+        }
+        
+        .uni-name {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+        
+        .uni-degree {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .uni-body {
+            padding: 16px;
+        }
+        
+        .metric {
+            margin-bottom: 12px;
+        }
+        
+        .metric-label {
+            font-size: 13px;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .percentage {
+            font-weight: 500;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: #6a3deb;
+            border-radius: 3px;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 18px;
+            margin-left: 10px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            border: 1px solid #d1d5db;
+            transition: .4s;
+            border-radius: 18px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 2px;
+            bottom: 1px;
+            background-color: #6a3deb;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: white;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(16px);
+        }
+        
+        .show-more-btn {
+            display: block;
+            margin: 20px auto;
+            background-color: #f0f2f5;
+            color: #5a67d8;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .show-more-btn:hover {
+            background-color: #e5e7eb;
+        }
+        
+        .footer {
+            background: #1A0631;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+            width: 100%;
+        }
+		/* CSS për ikonat në navigimin e profilit */
+.profile-nav-link i {
+    margin-right: 8px; /* Hapësirë midis ikonës dhe tekstit */
+    font-size: 1.1rem; /* Madhësia e ikonës */
+}
+
+/* Animacion opsional për ikonat kur kaloni kursorin mbi to */
+.profile-nav-link:hover i {
+    transform: scale(1.2); /* Ikonat bëhen pak më të mëdha kur kursori është mbi to */
+    transition: transform 0.2s ease; /* Tranzicion i butë */
+}
+
+/* Stili për ikonat kur janë aktive */
+.profile-nav-link.active i {
+    color: var(--secondary-color); /* Ngjyra e ikonave aktive për të përshtatur me stilin */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+      <img src="tbu.png">
+        <span style="margin-right:700px;">Match With Your Future</span>
+
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="university.html">University</a>
+        <a href="profil.html">Profile</a>
+        <a href="contact.html" class="get-in-touch">Get In Touch</a>
+      </div>
+    </nav>
+    
+        <div class="profile-header">
+            <div class="profile-avatar">U</div>
+            <h1 class="profile-name">User</h1>
+            <p class="profile-school">Shkolla e Mesme "Qemal Stafa" | Klasa 12</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>4</h3>
+                    <p>Teste të Përfunduara</p>
+                </div>
+                <div class="stat-card">
+                    <h3>6</h3>
+                    <p>Programe të Ruajtura</p>
+                </div>
+                <div class="stat-card">
+                    <h3>68%</h3>
+                    <p>Profili i Plotesuar</p>
+                </div>
+            </div>
+        </div>
+        
+       <nav class="profile-nav">
+    <a href="profil.html" class="profile-nav-link ">
+        <i class="fas fa-user"></i> Profili im
+    </a>
+    <a href="rekomandimet.html" class="profile-nav-link active">
+        <i class="fas fa-star"></i> Rekomandimet
+    </a>
+    <a href="rezultatet.html" class="profile-nav-link">
+        <i class="fas fa-chart-bar"></i> Rezultatet e Testeve
+    </a>
+    <a href="programet.html" class="profile-nav-link">
+        <i class="fas fa-bookmark"></i> Programet e Ruajtura
+    </a>
+   
+</nav>
+        <h1>Rekomandimet e Mia</h1>
+        
+        <!-- University Card 1 -->
+        <div class="uni-card">
+            <div class="uni-header">
+                <div class="uni-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="uni-info">
+                    <div class="uni-name">Tirana Business University</div>
+                    <div class="uni-degree">Bachelor në Informatikë Ekonomike</div>
+                </div>
+            </div>
+            <div class="uni-body">
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Përputhshmëria</span>
+                        <span class="percentage">96%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 96%"></div>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Shiko Detajet</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- University Card 2 -->
+        <div class="uni-card">
+            <div class="uni-header">
+                <div class="uni-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="uni-info">
+                    <div class="uni-name">Universiteti Europian</div>
+                    <div class="uni-degree">Bachelor në Shkenca Kompjuterike</div>
+                </div>
+            </div>
+            <div class="uni-body">
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Përputhshmëria</span>
+                        <span class="percentage">92%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 92%"></div>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Shiko Detajet</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- University Card 3 -->
+        <div class="uni-card">
+            <div class="uni-header">
+                <div class="uni-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="uni-info">
+                    <div class="uni-name">Universiteti Polis</div>
+                    <div class="uni-degree">Bachelor në Arkitekturë Digjitale</div>
+                </div>
+            </div>
+            <div class="uni-body">
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Përputhshmëria</span>
+                        <span class="percentage">88%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 88%"></div>
+                    </div>
+                </div>
+                
+                <div class="metric">
+                    <div class="metric-label">
+                        <span>Shiko Detajet</span>
+                        <label class="toggle-switch">
+                            <input type="checkbox" class="toggle-input">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="show-more-btn">Shiko Më Shumë Rekomandime</button>
+    </div>
+    
+    <div class="footer">
+        © 2023 Match with Your Future. Të gjitha të drejtat të rezervuara.
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle functionality for switches
+            const toggleInputs = document.querySelectorAll('.toggle-input');
+            
+            toggleInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const card = this.closest('.uni-card');
+                    const details = card.querySelector('.details-panel');
+                    
+                    if (this.checked && !details) {
+                        // If checked and details panel doesn't exist, create it
+                        const detailsPanel = document.createElement('div');
+                        detailsPanel.className = 'details-panel';
+                        detailsPanel.style.padding = '0 16px 16px';
+                        detailsPanel.style.display = 'none';
+                        
+                        // Create some dummy details content
+                        detailsPanel.innerHTML = `
+                            <div style="font-size: 14px; margin-bottom: 10px; color: #555;">
+                                <p>Informacion shtesë për programin:</p>
+                                <ul style="padding-left: 20px; margin-top: 5px;">
+                                    <li>Kohëzgjatja: 3 vite</li>
+                                    <li>Kredite: 180 ECTS</li>
+                                    <li>Gjuha: Shqip, Anglisht</li>
+                                </ul>
+                            </div>
+                        `;
+                        
+                        card.querySelector('.uni-body').appendChild(detailsPanel);
+                        
+                        // Animate the panel to show
+                        setTimeout(() => {
+                            detailsPanel.style.display = 'block';
+                            detailsPanel.style.transition = 'all 0.3s ease';
+                            detailsPanel.style.opacity = '1';
+                        }, 10);
+                    } else if (details) {
+                        // If details exist, toggle their visibility
+                        if (this.checked) {
+                            details.style.display = 'block';
+                            setTimeout(() => {
+                                details.style.opacity = '1';
+                            }, 10);
+                        } else {
+                            details.style.opacity = '0';
+                            setTimeout(() => {
+                                details.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+            
+            // Show more button click event
+            const showMoreBtn = document.querySelector('.show-more-btn');
+            showMoreBtn.addEventListener('click', function() {
+                // Here you would typically load more universities
+                // For this demo, we'll just show an alert
+                alert('Kërkesa për të shfaqur më shumë universitete u dërgua!');
+            });
+
+            // Animate cards on load
+            const cards = document.querySelectorAll('.uni-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>

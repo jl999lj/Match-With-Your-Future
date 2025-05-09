@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Match With Your Future</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+	<link rel="icon" type="image/x-icon" href="tbu.ico">
+  </head>
+  <body>
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <div class="header-content">
+            <a href="" class="logo">
+              <img src="tbu.png" />
+              <span>Match With Your Future</span>
+            </a>
+            <nav class="main-nav">
+              <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="challenges.html">Challenges</a></li>
+                <li><a href="university.html">University</a></li>
+                <li><a href="contact.html">Get In Touch</a></li>
+              </ul>
+            </nav>
+            <div class="auth-buttons">
+              <a href="login.html" class="btn btn-outline">Login</a>
+              <a href="register.html" class="btn btn-primary active">Sign Up</a>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="auth-container">
+          <div class="auth-card">
+            <div class="auth-header">
+              <h1>Krijo llogarinë tënde</h1>
+              <p>Bëhu pjesë e platformës për të zbuluar rrugën tënde akademike</p>
+              
+              <div class="step-indicator">
+                <div class="step active" data-step="1">
+                  <span class="step-number">1</span>
+                  <span class="step-text">Informacionet Bazë</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="2">
+                  <span class="step-number">2</span>
+                  <span class="step-text">Profili Shkollor</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-step="3">
+                  <span class="step-number">3</span>
+                  <span class="step-text">Interesat</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="auth-content">
+              <form id="registrationForm" enctype="multipart/form-data">
+                <!-- Step 1: Basic Information -->
+                <div class="form-step" data-step="1">
+                  <h2>Informacionet Personale</h2>
+                  
+                  <div class="form-group">
+                    <label for="firstName">Emri*</label>
+                    <input type="text" name="firstName" id="firstName" class="form-control" placeholder="Emri" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="lastName">Mbiemri*</label>
+                    <input type="text" id="lastName" name="lastName" class="form-control" placeholder="Mbiemri" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="email@shembull.com" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone">Numri i telefonit</label>
+                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="+355 69 XXX XXXX">
+                    <small class="form-text">Opsional. Do të përdoret vetëm për njofime të rëndësishme ose rikuperim të llogarisë.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="password">Fjalëkalimi*</label>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                    <small class="form-text">Minimumi 8 karaktere, të paktën një numër dhe një karakter të veçantë.</small>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="confirmPassword">Konfirmo Fjalëkalimin*</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" placeholder="••••••••" required>
+                  </div>
+                  
+                  <div class="form-actions">
+                    <div class="social-registration">
+                      <p class="divider"><span>Ose regjistrohu me</span></p>
+                      <div class="social-buttons">
+                        <button type="button" class="btn btn-social google">Google</button>
+                        <button type="button" class="btn btn-social facebook">Facebook</button>
+                      </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary btn-next" data-next-step="2">Vazhdo</button>
+                  </div>
+                </div>
+                
+                <!-- Step 2: School Profile -->
+                <div class="form-step" data-step="2" style="display: none;">
+                  <h2>Informacionet Shkollore</h2>
+                  
+                  <div class="form-group">
+                    <label for="city">Qyteti*</label>
+                    <div class="select-wrapper">
+                      <select id="city" name="city" class="form-control" required>
+                        <option value="" selected disabled>Zgjidh qytetin...</option>
+                        <option value="tirane">Tiranë</option>
+                        <option value="durres">Durrës</option>
+                        <option value="vlore">Vlorë</option>
+                        <option value="shkoder">Shkodër</option>
+                        <option value="elbasan">Elbasan</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="school">Shkolla*</label>
+                    <div class="select-wrapper">
+                      <select id="school" name="school" class="form-control" required>
+                        <option value="" selected disabled>Zgjidh shkollën tënde...</option>
+                        <option value="school1">Gjimnazi "Sami Frashëri"</option>
+                        <option value="school2">Gjimnazi "Petro Nini Luarasi"</option>
+                        <option value="school3">Gjimnazi "Ismail Qemali"</option>
+                        <option value="school4">Kolegji Turk</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="grade">Klasa*</label>
+                    <div class="select-wrapper">
+                      <select id="grade" name="grade" class="form-control" required>
+                        <option value="" selected disabled>Zgjidh klasën tënde...</option>
+                        <option value="10">Klasa 10</option>
+                        <option value="11">Klasa 11</option>
+                        <option value="12">Klasa 12</option>
+                        <option value="graduate">I diplomuar</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="profile">Dega/Profili</label>
+                    <div class="select-wrapper">
+                      <select id="profile" name="profile" class="form-control">
+                        <option value="" selected disabled>Zgjidh degën/profilin...</option>
+                        <option value="sciences">Shkenca Natyrore</option>
+                        <option value="social">Shkenca Sociale</option>
+                        <option value="professional">Shkollë Profesionale</option>
+                        <option value="general">Profil i Përgjithshëm</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-actions">
+                    <button type="button" class="btn btn-outline btn-back" data-prev-step="1">Kthehu</button>
+                    <button type="button" class="btn btn-primary btn-next" data-next-step="3">Vazhdo</button>
+                  </div>
+                </div>
+                
+                <!-- Step 3: Interests -->
+                <div class="form-step" data-step="3" style="display: none;">
+                  <h2>Interesat dhe Preferencat Tuaja</h2>
+                  
+                  <div class="form-group">
+                    <label>Cilat fusha të studimit të interesojnë më shumë?</label>
+                    <div class="checkbox-grid">
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="tech" name="interests" value="tech">
+                        <label for="tech">Teknologji & IT</label>
+                      </div>
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="business" name="interests" value="business">
+                        <label for="business">Biznes & Ekonomi</label>
+                      </div>
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="medicine" name="interests" value="medicine">
+                        <label for="medicine">Mjekësi & Shëndëtësi</label>
+                      </div>
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="engineering" name="interests" value="engineering">
+                        <label for="engineering">Inxhinieri</label>
+                      </div>
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="arts" name="interests" value="arts">
+                        <label for="arts">Arte & Dizajn</label>
+                      </div>
+                      <div class="checkbox-item">
+                        <input type="checkbox" id="law" name="interests" value="law">
+                        <label for="law">Drejtësi & Ligj</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="future-plans">Cilat janë planet e tua pas shkollës së mesme?</label>
+                    <div class="select-wrapper">
+                      <select id="future-plans" name="futurePlans" class="form-control">
+                        <option value="" selected disabled>Zgjidh...</option>
+                        <option value="university-albania">Universitet në Shqipëri</option>
+                        <option value="university-abroad">Universitet jashtë vendit</option>
+                        <option value="work">Punësim i menjëhershëm</option>
+                        <option value="undecided">Ende i/e papërcaktuar</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="heard-about">Si e mësove për platformën tonë?</label>
+                    <div class="select-wrapper">
+                      <select id="heard-about" name="heardAbout" class="form-control">
+                        <option value="" selected disabled>Zgjidh...</option>
+                        <option value="social-media">Rrjete sociale</option>
+                        <option value="friends">Nga miqtë</option>
+                        <option value="school">Në shkollë</option>
+                        <option value="event">Në një event</option>
+                        <option value="search">Kërkim në internet</option>
+                        <option value="other">Tjetër</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group checkbox-single">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Unë pranoj <a href="#" class="text-link">Termat e Përdorimit</a> dhe <a href="#" class="text-link">Politikën e Privatësisë</a>*</label>
+                  </div>
+                  
+                  <div class="form-actions">
+                    <button type="button" class="btn btn-outline btn-back" data-prev-step="2">Kthehu</button>
+                    <button type="submit" class="btn btn-primary">Krijo Llogarinë</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+        
+        <section class="help-section">
+          <div class="container">
+            <p>Ke nevojë për ndihmë? <a href="contact.html" class="text-link">Na kontakto</a></p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer footer-simple">
+        <div class="container">
+          <div class="footer-bottom">
+            <p>© 2025 Match with Your Future. Të gjitha të drejtat të rezervuara.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="register.js"></script>
+    <script src="register_submit.js"></script>
+  </body>
+</html>

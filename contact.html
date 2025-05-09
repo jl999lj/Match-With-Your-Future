@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="tbu.ico">
+    <title>Match With Your Future</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1a1e3b;
+            color: white;
+            padding: 0.5rem 2rem;
+            position: relative;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            color: white;
+            text-decoration: none;
+        }
+
+        
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8ecae6;
+        }
+
+        .get-in-touch {
+            color: #3db4b9;
+            font-weight: 500;
+        }
+
+        /* Hero section */
+        .hero {
+            background-color: #1a1e3b;
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        /* Contact information */
+        .contact-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-header {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a1e3b;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e8f0fe;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #5d71e2;
+        }
+
+        .contact-details h3 {
+            font-size: 0.9rem;
+            color: #1a1e3b;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-details p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Contact form */
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-header {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #1a1e3b;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #5d71e2;
+        }
+
+        .form-select {
+            position: relative;
+        }
+
+        .form-select select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-checkbox input {
+            margin-top: 0.3rem;
+        }
+
+        .form-checkbox label {
+            font-size: 0.85rem;
+            margin-bottom: 0;
+        }
+
+        .form-checkbox a {
+            color: #5d71e2;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #5d71e2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #4a5bc7;
+        }
+
+        /* FAQ section */
+        .faq-section {
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            font-size: 2rem;
+            color: #1a1e3b;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: bold;
+            color: #1a1e3b;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1e3b;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+		.match{
+		margin-right: 700px;
+		}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+           <img src="tbu.png">
+            <span class="match">Match With Your Future</span>      
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="university.html">University</a>
+            <a href="profil.html">Profile</a>
+            <a href="contact.html" class="get-in-touch">Get In Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Na Kontakto</h1>
+        <p>Kemi kënaqësinë t'ju ndihmojmë me çdo pyetje apo sugjerim që keni për platformën tonë.</p>
+    </section>
+
+    <!-- Contact Information -->
+    <div class="contact-container">
+        <h2 class="contact-header">Informacione Kontakti</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#5d71e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 6L12 13L2 6" stroke="#5d71e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="contact-details">
+                    <h3>Email</h3>
+                    <p>info@matchwithyourfuture.al</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#5d71e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#5d71e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="contact-details">
+                    <h3>Adresa</h3>
+                    <p>Rr. Faik Konica, Tiranë, Shqipëri</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 16.92V19.92C22 20.4704 21.7893 20.9978 21.4142 21.3728C21.0391 21.7479 20.5117 21.9586 19.96 21.96C18.14 22.09 16.36 21.81 14.72 21.13C13.1985 20.5075 11.8149 19.5962 10.64 18.44C9.48375 17.2651 8.57254 15.8814 7.95 14.36C7.26 12.71 6.98 10.92 7.12 9.09C7.12118 8.54008 7.33076 8.01485 7.70436 7.6409C8.07795 7.26694 8.60178 7.05665 9.15 7.05H12.15C12.6117 7.04878 13.0592 7.20622 13.4123 7.49404C13.7654 7.78186 14.0002 8.18049 14.07 8.63C14.18 9.39 14.39 10.13 14.69 10.83C14.8055 11.0991 14.8322 11.3985 14.7661 11.6837C14.7001 11.969 14.5447 12.2261 14.32 12.42L13.19 13.54C13.6629 14.7771 14.3858 15.8909 15.32 16.81C16.2391 17.7442 17.3528 18.4671 18.59 18.94L19.71 17.82C19.904 17.5953 20.1611 17.4399 20.4463 17.3739C20.7316 17.3078 21.031 17.3345 21.3 17.45C21.9991 17.7493 22.7386 17.9594 23.5 18.07C23.9539 18.1398 24.3568 18.378 24.6444 18.7357C24.932 19.0934 25.0854 19.5458 25.08 20.01L22 16.92Z" stroke="#5d71e2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="contact-details">
+                    <h3>Telefon</h3>
+                    <p>+355 69 XXX XXXX</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="form-container">
+        <h2 class="form-header">Na Dërgoni një Mesazh</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Emri i plotë*</label>
+                <input type="text" id="name" class="form-control" placeholder="Emri dhe Mbiemri" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input type="email" id="email" class="form-control" placeholder="email@shembull.com" required>
+            </div>
+            <div class="form-group">
+                <label for="school">Shkolla</label>
+                <div class="form-select">
+                    <select id="school" class="form-control">
+                        <option value="">Zgjidh shkollën tënde (opsionale)</option>
+                        <option value="shkolla1">Shkolla "Qemal Stafa"</option>
+                        <option value="shkolla2">Shkolla "Sami Frashëri"</option>
+                        <option value="shkolla3">Shkolla "Ismail Qemali"</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subjekti*</label>
+                <input type="text" id="subject" class="form-control" placeholder="Pyetje për..." required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mesazhi*</label>
+                <textarea id="message" class="form-control form-textarea" placeholder="Shkruani mesazhin tuaj këtu..." required></textarea>
+            </div>
+            <div class="form-checkbox">
+                <input type="checkbox" id="privacy" required>
+                <label for="privacy">Pranoj që të dhënat e mia të përdoren në përputhje me <a href="#">Kushtet e Privatësisë</a>.</label>
+            </div>
+            <button type="submit" class="submit-btn">Dërgo Mesazh</button>
+        </form>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="faq-header">Pyetje të Shpeshta</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Si funksionojnë rekomandimet e universiteteve?</div>
+            <div class="faq-answer">
+                Rekomandimet bazohen në algoritme inteligjente që analizojnë rezultatet e testeve tuaja, interesat, aftësitë dhe aspiratat e karrierës. Më pas, këto të dhëna përputhen me programet universitare disponibël në Shqipëri për të gjetur përshtajtjen më të mirë për ju.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">A është kjo platformë falas për nxënësit?</div>
+            <div class="faq-answer">
+                Po, platforma "Match with Your Future" është plotësisht falas për të gjithë nxënësit e shkollave të mesme në Shqipëri. Të gjitha testet, rekomandimet dhe eksplorimet e universiteteve janë pa pagesë.
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">A mund të marr pjesë në një vizitë fizike në universitet?</div>
+            <div class="faq-answer">
+                Po, përmes platformës sonë mund të regjistroheni për vizita në kampuse dhe ditë të hapura të universiteteve të ndryshme. Shiko seksionin "Ngjarjet" për më shumë informacione dhe datat e ardhshme.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2025 Match with Your Future. Të gjitha të drejtat të rezervuara.</p>
+    </footer>
+
+    <script>
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            const privacy = document.getElementById('privacy').checked;
+            
+            if (!name || !email || !subject || !message || !privacy) {
+                alert('Ju lutemi plotësoni të gjitha fushat e detyrueshme.');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                alert('Ju lutemi vendosni një adresë email të vlefshme.');
+                return;
+            }
+            
+            // Here you would normally send the form data to a server
+            alert('Mesazhi u dërgua me sukses! Faleminderit që na kontaktuat.');
+            this.reset();
+        });
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isVisible = answer.style.maxHeight;
+                
+                if (isVisible) {
+                    answer.style.maxHeight = null;
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

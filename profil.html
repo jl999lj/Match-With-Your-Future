@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profil.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,500,600,700" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<link rel="icon" type="image/x-icon" href="tbu.ico">
+</head>
+<body>
+    <nav class="navbar">
+      <img src="tbu.png">
+        <span style="margin-right:700px;">Match With Your Future</span>
+
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="university.html">University</a>
+        <a href="profil.html">Profile</a>
+        <a href="contact.html" class="get-in-touch">Get In Touch</a>
+      </div>
+    </nav>
+
+    <div class="profile-header">
+        <div class="profile-avatar">U</div>
+        <h1 class="profile-name">User</h1>
+        <p class="profile-school">Shkolla e Mesme "Qemal Stafa" | Klasa 12</p>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>4</h3>
+                <p>Teste të Përfunduara</p>
+            </div>
+            <div class="stat-card">
+                <h3>6</h3>
+                <p>Programe të Ruajtura</p>
+            </div>
+            <div class="stat-card">
+                <h3>68%</h3>
+                <p>Profili i Plotesuar</p>
+            </div>
+        </div>
+    </div>
+
+    <nav class="profile-nav">
+    <a href="profil.html" class="profile-nav-link active">
+        <i class="fas fa-user"></i> Profili im
+    </a>
+    <a href="rekomandimet.html" class="profile-nav-link">
+        <i class="fas fa-star"></i> Rekomandimet
+    </a>
+    <a href="rezultatet.html" class="profile-nav-link">
+        <i class="fas fa-chart-bar"></i> Rezultatet e Testeve
+    </a>
+    <a href="programet.html" class="profile-nav-link">
+        <i class="fas fa-bookmark"></i> Programet e Ruajtura
+    </a>
+
+</nav>
+    </header>
+
+   
+    <main>
+        <section class="card personal-info">
+            <h2>Informacionet Personale</h2>
+            <form id="personalInfoForm">
+                <div class="form-group">
+                    <label>Emri i Plotë</label>
+                    <input type="text" value="user">
+                </div>
+                <div class="form-group">
+                    <label>Shkolla</label>
+                    <input type="text" value='Shkolla e Mesme "Qemal Stafa"'>
+                </div>
+                <div class="form-group">
+                    <label>Klasa</label>
+                    <select>
+                        <option selected>Klasa 12</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" value="example@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="tel" value="+355 69 XXX XXXX">
+                </div>
+                <button type="submit" class="save-btn">Ruaj Ndryshimet</button>
+            </form>
+        </section>
+
+        <section class="card academic-interests">
+            <h2>Interesat Akademike</h2>
+            <div class="interests-section">
+                <h3>Fushat e Interesit</h3>
+                <div class="badges">
+                    <span class="badge">Teknologji</span>
+                    <span class="badge">Biznes</span>
+                    <span class="badge">Art Digjital</span>
+                    <span class="badge">Inovacion</span>
+                    <span class="badge add">+Shto të tjera</span>
+                </div>
+            </div>
+            <div class="interests-section">
+                <h3>Karriera të Mundshme</h3>
+                <div class="badges">
+                    <span class="badge">Zhvillues Softueri</span>
+                    <span class="badge">UX Designer</span>
+                    <span class="badge">Data Analyst</span>
+                    <span class="badge add">+Shto të tjera</span>
+                </div>
+            </div>
+            <div class="interests-section">
+                <h3>Lëndët e Preferuara</h3>
+                <div class="subjects">
+                    Matematikë, Informatikë, Ekonomi, Histori Arti
+                </div>
+            </div>
+        </section>
+
+        <section class="card profile-completion">
+            <h2>Përfundimi i Profilit</h2>
+            <div class="progress-bar">
+                <div class="progress" style="width: 68%"></div>
+            </div>
+            <div class="completion-items">
+                <div class="completion-item">
+                    <span>Informacionet Personale</span>
+                    <span class="status completed">Plotësuar</span>
+                </div>
+                <div class="completion-item">
+                    <span>Interesat Akademike</span>
+                    <span class="status completed">Plotësuar</span>
+                </div>
+                <div class="completion-item">
+                    <span>Testet e Personalitetit</span>
+                    <span class="status completed">Plotësuar</span>
+                </div>
+                <div class="completion-item">
+                    <span>Testet e Aftësive</span>
+                    <span class="status completed">Plotësuar</span>
+                </div>
+                <div class="completion-item">
+                    <span>Preferenca për Universitet</span>
+                    <span class="status in-progress">Në Proces</span>
+                </div>
+                <div class="completion-item">
+                    <span>Konfirmimi i Aplikimit</span>
+                    <span class="status pending">Në Pritje</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card unlock-more">
+            <h2>Zhblloko Më Shumë</h2>
+            <p>Përfundo të gjitha për të marrë rekomandimet më të sakta për programet universitare</p>
+            <button class="continue-btn">Vazhdo Testet</button>
+        </section>
+
+        <section class="not-satisfied">
+            <h2>Nuk je i kënaqur me rezultatet?</h2>
+            <button class="reset-btn">Reset</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Match with Your Future. Të gjitha të drejtat të rezervuara.</p>
+    </footer>
+
+    <script src="profil.js"></script>
+</body>
+</html>
+
+
+   

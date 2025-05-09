@@ -1,0 +1,369 @@
+/* uni.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #1e1b4b;
+    --secondary-color: #4338ca;
+    --accent-color: #6366f1;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gray-color: #64748b;
+    --border-color: #e2e8f0;
+    --bg-color: #f8fafc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 24px;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    opacity: 1;
+}
+
+/* University Header */
+.university-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 0;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    opacity: 0.8;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.university-header h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Tabs */
+.tabs {
+    background-color: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tabs .container {
+    display: flex;
+    overflow-x: auto;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--gray-color);
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.tab svg {
+    margin-right: 8px;
+}
+
+.tab.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+/* Content */
+.content {
+    padding: 20px 0;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--dark-color);
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin: 20px 0 10px;
+    color: var(--dark-color);
+}
+
+p {
+    margin-bottom: 15px;
+    color: var(--gray-color);
+    font-size: 14px;
+}
+
+/* Përshkrimi Tab */
+ul {
+    list-style-type: none;
+    margin-bottom: 20px;
+    color: var(--gray-color);
+}
+
+ul li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+.fakultetet {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.fakulteti {
+    background-color: #eef2ff;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.fakulteti h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.fakulteti ul {
+    margin-bottom: 0;
+}
+
+.fakulteti ul li {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+/* Statistika */
+.statistika {
+    margin-bottom: 25px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    width: 80px;
+    font-size: 0.9rem;
+    color: var(--gray-color);
+}
+
+.stat-bar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: #e2e8f0;
+    border-radius: 4px;
+    margin: 0 15px;
+    overflow: hidden;
+}
+
+.stat-fill {
+    height: 100%;
+    background-color: var
+}
+/* Stilizimi i seksionit të programeve */
+.program-section {
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.program-header {
+    display: flex;
+    align-items: center;
+    background-color: #eef2ff;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.program-icon {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+.program-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.program-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.program-item:last-child {
+    border-bottom: none;
+}
+
+.program-info h4 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.program-info p {
+    font-size: 0.85rem;
+    color: var(--gray-color);
+    margin: 0;
+}
+
+.btn-small {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.kerkese-section {
+    background-color: #eef2ff;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.kerkese-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    font-size: 14px;
+    text-align: center;
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: white;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+.stat-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white; /* Ngjyra e përgjithshme e rreshtit */
+}
+
+.stat-item:nth-child(odd) {
+    background-color: white; /* Ngjyra për rreshtat tek numrat tek */
+}
+
+.stat-item:nth-child(even) {
+    background-color: white; /* Ngjyra për rreshtat tek numrat çift */
+}
+
+.stat-fill {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.stat-fill[style*="width: 85%"] {
+    background-color: purple; /* Ngjyra për mbushjen me 85% */
+}
+
+.stat-fill[style*="width: 75%"] {
+    background-color: purple; /* Ngjyra për mbushjen me 75% */
+}
+
+.stat-fill[style*="width: 65%"] {
+    background-color: purple; /* Ngjyra për mbushjen me 65% */
+}

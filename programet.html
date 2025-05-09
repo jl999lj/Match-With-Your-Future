@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programet e Ruajtura</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="icon" type="image/x-icon" href="tbu.ico">
+
+    <style>
+        :root {
+    --primary-color: #4b40db;
+    --secondary-color: #32d1c2;
+    --dark-blue: #1e1b4b;
+    --purple: #8b35ea;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-900: #111827;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--white);
+}
+
+
+
+
+ /* Navigation */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1a1e3b;
+        color: white;
+        padding: 0.5rem 2rem;
+        position: relative;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+      }
+
+      .logo span {
+        font-weight: 600;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #8ecae6;
+      }
+
+      .get-in-touch {
+        color: #3db4b9;
+        font-weight: 500;
+      }
+
+/* Profile Header */
+.profile-header {
+    background-color: var(--dark-blue);
+    padding: 2rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.profile-avatar {
+    width: 156px;
+    height: 156px;
+    background: linear-gradient(45deg, #4b40db, #32d1c2);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.profile-name {
+    color: var(--white);
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.profile-school {
+    color: #c5d0fc;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background-color: #3b365f;
+    border: 2px solid #2b2c6c;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 305px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: #c5d0fc;
+    font-size: 1.5rem;
+}
+
+
+
+        
+        h1 {
+            color: #0a3d62;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+       
+        .remove-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            color: #777;
+            border-radius: 4px;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .remove-button:hover {
+            background-color: #f5f5f5;
+        }
+        footer {
+    background-color: var(--gray-900);
+    color: #9ba2ae;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+.profile-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+    text-align: center; /* Qendron tekstin */
+}
+
+.profile-nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-align: center; /* Qendron tekstin */
+}
+
+.profile-nav-link.active {
+    color: var(--primary-color);
+}
+		/* CSS për ikonat në navigimin e profilit */
+.profile-nav-link i {
+    margin-right: 8px; /* Hapësirë midis ikonës dhe tekstit */
+    font-size: 1.1rem; /* Madhësia e ikonës */
+}
+
+/* Animacion opsional për ikonat kur kaloni kursorin mbi to */
+.profile-nav-link:hover i {
+    transform: scale(1.2); /* Ikonat bëhen pak më të mëdha kur kursori është mbi to */
+    transition: transform 0.2s ease; /* Tranzicion i butë */
+}
+
+/* Stili për ikonat kur janë aktive */
+.profile-nav-link.active i {
+    color: var(--secondary-color); /* Ngjyra e ikonave aktive për të përshtatur me stilin */
+}
+
+/* Stili i përditësuar për kartat e universiteteve */
+.university-card {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px; /* Pak më shumë hapësirë */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: center; /* Qendron përmbajtjen */
+}
+
+.university-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #e6ecff;
+    border-radius: 6px;
+    display: inline-flex; /* Ndryshuar nga float:left në inline-flex */
+    align-items: center;
+    justify-content: center;
+    color: #2851a3;
+    margin-bottom: 10px; /* Hapësirë poshtë ikonës */
+}
+
+.university-name {
+    font-weight: 700; /* Më i theksuar */
+    font-size: 1.3rem; /* Më i madh */
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center;
+}
+
+.program-name {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.button-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center; /* Qendron butonin */
+}
+
+.details-button {
+    background-color: #1e1b4b; /* Blu i errët */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    width: 80%; /* Më i ngushtë se 100% */
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+    font-weight: 600; /* Më i theksuar */
+}
+
+.details-button:hover {
+    background-color: #2b2870; /* Blu i errët pak më i çelët kur kursori është mbi të */
+}
+    </style>
+</head>
+<body>
+   <nav class="navbar">
+      <img src="tbu.png">
+        <span style="margin-right:700px;">Match With Your Future</span>
+
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="university.html">University</a>
+        <a href="profil.html">Profile</a>
+        <a href="contact.html" class="get-in-touch">Get In Touch</a>
+      </div>
+    </nav>
+
+    <div class="profile-header">
+        <div class="profile-avatar">U</div>
+        <h1 class="profile-name">User</h1>
+        <p class="profile-school">Shkolla e Mesme "Qemal Stafa" | Klasa 12</p>
+        
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3>4</h3>
+                <p>Teste të Përfunduara</p>
+            </div>
+            <div class="stat-card">
+                <h3>6</h3>
+                <p>Programe të Ruajtura</p>
+            </div>
+            <div class="stat-card">
+                <h3>68%</h3>
+                <p>Profili i Plotesuar</p>
+            </div>
+        </div>
+    </div>
+
+     <nav class="profile-nav">
+    <a href="profil.html" class="profile-nav-link">
+        <i class="fas fa-user"></i> Profili im
+    </a>
+    <a href="rekomandimet.html" class="profile-nav-link">
+        <i class="fas fa-star"></i> Rekomandimet
+    </a>
+    <a href="rezultatet.html" class="profile-nav-link">
+        <i class="fas fa-chart-bar"></i> Rezultatet e Testeve
+    </a>
+    <a href="programet.html" class="profile-nav-link active">
+        <i class="fas fa-bookmark"></i> Programet e Ruajtura
+    </a>
+</nav>
+
+    <h1 style="margin-left: 650px;">Programet e Ruajtura</h1>
+    <div id="university-list">
+        <div class="university-card" id="card-1">
+            <button class="remove-button" onclick="removeCard('card-1')">X</button>
+            <div class="university-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+            </div>
+            <div class="university-info">
+                <div class="university-name">Tirana Business University</div>
+                <div class="program-name">Bachelor në Informatikë Ekonomike</div>
+                <div class="button-container">
+                    <button class="details-button" onclick="goToDetails('Tirana Business University')">Shiko Detajet</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="university-card" id="card-2">
+            <button class="remove-button" onclick="removeCard('card-2')">X</button>
+            <div class="university-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+            </div>
+            <div class="university-info">
+                <div class="university-name">Universiteti Europian</div>
+                <div class="program-name">Bachelor në Shkenca Kompjuterike</div>
+                <div class="button-container">
+                    <button class="details-button" onclick="goToDetails('Universiteti Europian')">Shiko Detajet</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="university-card" id="card-3">
+            <button class="remove-button" onclick="removeCard('card-3')">X</button>
+            <div class="university-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+            </div>
+            <div class="university-info">
+                <div class="university-name">Universiteti Polis</div>
+                <div class="program-name">Bachelor në Arkitekturë Digjitale</div>
+                <div class="button-container">
+                    <button class="details-button" onclick="goToDetails('Universiteti Polis')">Shiko Detajet</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="university-card" id="card-4">
+            <button class="remove-button" onclick="removeCard('card-4')">X</button>
+            <div class="university-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+            </div>
+            <div class="university-info">
+                <div class="university-name">Albanian University</div>
+                <div class="program-name">Master në Data Science</div>
+                <div class="button-container">
+                    <button class="details-button" onclick="goToDetails('Albanian University')">Shiko Detajet</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="university-card" id="card-5">
+            <button class="remove-button" onclick="removeCard('card-5')">X</button>
+            <div class="university-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+            </div>
+            <div class="university-info">
+                <div class="university-name">UBT</div>
+                <div class="program-name">Master në Biznes Inovativ</div>
+                <div class="button-container">
+                    <button class="details-button" onclick="goToDetails('UBT')">Shiko Detajet</button>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>© 2025 Match with Your Future. Të gjitha të drejtat të rezervuara.</p>
+        </footer>
+    </div>
+
+    <script>
+        function removeCard(cardId) {
+            const card = document.getElementById(cardId);
+            
+            // Animation for smooth removal
+            card.style.transition = "opacity 0.3s, transform 0.3s";
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.95)";
+            
+            setTimeout(() => {
+                card.remove();
+                
+                // Check if all cards are removed
+                const remainingCards = document.querySelectorAll('.university-card').length;
+                if (remainingCards === 0) {
+                    const emptyMessage = document.createElement('div');
+                    emptyMessage.textContent = "Nuk ka programe të ruajtura";
+                    emptyMessage.style.textAlign = "center";
+                    emptyMessage.style.padding = "30px";
+                    emptyMessage.style.color = "#777";
+                    document.getElementById('university-list').appendChild(emptyMessage);
+                }
+            }, 300);
+        }
+        
+        function goToDetails(universityName) {
+            // In a real application, this would navigate to the details page
+            alert(`Navigating to details page for: ${universityName}`);
+            // window.location.href = `/university-details/${universityName}`;
+        }
+    </script>
+</body>
+</html>

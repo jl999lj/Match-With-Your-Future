@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match With Your Future</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="icon" type="image/x-icon" href="tbu.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+       
+        :root {
+    --primary-color: #4b40db;
+    --secondary-color: #32d1c2;
+    --dark-blue: #1e1b4b;
+    --purple: #8b35ea;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-900: #111827;
+}
+
+
+
+
+ /* Navigation */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1a1e3b;
+        color: white;
+        padding: 0.5rem 2rem;
+        position: relative;
+      }
+
+      .navbar .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+      }
+
+      .logo span {
+        font-weight: 600;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #8ecae6;
+      }
+
+      .get-in-touch {
+        color: #3db4b9;
+        font-weight: 500;
+      }
+/* Profile Header */
+.profile-header {
+    background-color: var(--dark-blue);
+    padding: 2rem;
+    text-align: center;
+    color: var(--white);
+}
+
+.profile-avatar {
+    width: 156px;
+    height: 156px;
+    background: linear-gradient(45deg, #4b40db, #32d1c2);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.profile-name {
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.profile-school {
+    color: #c5d0fc;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    background-color: #3b365f;
+    border: 2px solid #2b2c6c;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 305px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: #c5d0fc;
+    font-size: 1.5rem;
+}
+
+        
+       /* Profile Navigation */
+.profile-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.profile-nav-link {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.profile-nav-link.active {
+    color: var(--primary-color);
+}
+
+        /* Test Results Section */
+        .results-section {
+            background: white;
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .test-card {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .test-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .icon-analysis { background-color: #e3f2fd; color: #2196f3; }
+        .icon-tests { background-color: #fff8e1; color: #ffc107; }
+        .icon-interests { background-color: #e8f5e9; color: #4caf50; }
+        .icon-assessment { background-color: #f3e5f5; color: #9c27b0; }
+        
+        .test-info {
+            flex: 1;
+        }
+        
+        .test-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+        
+        .test-date {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        
+        .test-badge {
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #666;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 10px;
+        }
+        
+        .chart-icon {
+            display: flex;
+            align-items: center;
+        }
+        
+        .chart-icon i {
+            color: #6a3deb;
+        }
+        
+        /* Recommended Tests */
+        .recommendations-section {
+            background: white;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .recommendation-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .recommendation-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .recommendation-desc {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .recommendation-action {
+            text-align: right;
+        }
+        
+        .action-btn {
+            background-color: #1e1b4b ;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 4px 12px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        /* Feedback Section */
+        .feedback-section {
+            background-color: #1e1b4b;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+        
+        .feedback-title {
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .feedback-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-top: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #1A0631;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 12px;
+        }
+		/* CSS për ikonat në navigimin e profilit */
+.profile-nav-link i {
+    margin-right: 8px; /* Hapësirë midis ikonës dhe tekstit */
+    font-size: 1.1rem; /* Madhësia e ikonës */
+}
+
+/* Animacion opsional për ikonat kur kaloni kursorin mbi to */
+.profile-nav-link:hover i {
+    transform: scale(1.2); /* Ikonat bëhen pak më të mëdha kur kursori është mbi to */
+    transition: transform 0.2s ease; /* Tranzicion i butë */
+}
+
+/* Stili për ikonat kur janë aktive */
+.profile-nav-link.active i {
+    color: var(--secondary-color); /* Ngjyra e ikonave aktive për të përshtatur me stilin */
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+         <nav class="navbar">
+      <img src="tbu.png">
+        <span style="margin-right:700px;">Match With Your Future</span>
+
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="challenges.html">Challenges</a>
+        <a href="university.html">University</a>
+        <a href="profil.html">Profile</a>
+        <a href="contact.html" class="get-in-touch">Get In Touch</a>
+      </div>
+    </nav>
+    
+        <div class="profile-header">
+            <div class="profile-avatar">U</div>
+            <h1 class="profile-name">User</h1>
+            <p class="profile-school">Shkolla e Mesme "Qemal Stafa" | Klasa 12</p>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>4</h3>
+                    <p>Teste të Përfunduara</p>
+                </div>
+                <div class="stat-card">
+                    <h3>6</h3>
+                    <p>Programe të Ruajtura</p>
+                </div>
+                <div class="stat-card">
+                    <h3>68%</h3>
+                    <p>Profili i Plotesuar</p>
+                </div>
+            </div>
+        </div>
+        
+       <nav class="profile-nav">
+    <a href="profil.html" class="profile-nav-link ">
+        <i class="fas fa-user"></i> Profili im
+    </a>
+    <a href="rekomandimet.html" class="profile-nav-link">
+        <i class="fas fa-star"></i> Rekomandimet
+    </a>
+    <a href="rezultatet.html" class="profile-nav-link active">
+        <i class="fas fa-chart-bar"></i> Rezultatet e Testeve
+    </a>
+    <a href="programet.html" class="profile-nav-link">
+        <i class="fas fa-bookmark"></i> Programet e Ruajtura
+    </a>
+   
+</nav>
+    
+        
+        <!-- Test Results Section -->
+        <div class="results-section">
+            <h2 class="section-title">Rezultatet e Testeve</h2>
+            
+            <!-- Test Card 1 -->
+            <div class="test-card">
+                <div class="test-icon icon-analysis">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="test-info">
+                    <h3 class="test-title">Analiza e Personalitetit</h3>
+                    <p class="test-date">12 Mars 2023</p>
+                    <span class="test-badge">Analiza Gjendje</span>
+                </div>
+                <div class="chart-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+            </div>
+            
+            <!-- Test Card 2 -->
+            <div class="test-card">
+                <div class="test-icon icon-tests">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="test-info">
+                    <h3 class="test-title">Testet e Aftësive</h3>
+                    <p class="test-date">20 Mars 2023</p>
+                    <span class="test-badge">Matematikë Logjikë</span>
+                </div>
+                <div class="chart-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+            </div>
+            
+            <!-- Test Card 3 -->
+            <div class="test-card">
+                <div class="test-icon icon-interests">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="test-info">
+                    <h3 class="test-title">Interesat Profesionale</h3>
+                    <p class="test-date">5 Prill 2023</p>
+                    <span class="test-badge">IT Riaux AI</span>
+                </div>
+                <div class="chart-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+            </div>
+            
+            <!-- Test Card 4 -->
+            <div class="test-card">
+                <div class="test-icon icon-assessment">
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="test-info">
+                    <h3 class="test-title">Vlerësimi i Vlerave</h3>
+                    <p class="test-date">12 Prill 2023</p>
+                    <span class="test-badge">Vlerësimi Akademik</span>
+                </div>
+                <div class="chart-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recommendations Section -->
+        <div class="recommendations-section">
+            <h2 class="section-title">Teste të Rekomanduara</h2>
+            
+            <!-- Recommendation 1 -->
+            <div class="recommendation-card">
+                <h3 class="recommendation-title">Stili i të Mësuarit</h3>
+                <p class="recommendation-desc">Zbulo se cili është mënyra më e efektshme për të mësuar për ty</p>
+                <div class="recommendation-action">
+                    <button class="action-btn">Fillo</button>
+                </div>
+            </div>
+            
+            <!-- Recommendation 2 -->
+            <div class="recommendation-card">
+                <h3 class="recommendation-title">Ambientet e Preferuara</h3>
+                <p class="recommendation-desc">Zbulo se në çfarë ambientesh do të jesh më efektshëm në punë</p>
+                <div class="recommendation-action">
+                    <button class="action-btn">Fillo</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feedback Section -->
+        <div class="feedback-section">
+            <h3 class="feedback-title">Dëshironi të merrni një analizim më të thelluar të përgjigejeve tuaja?</h3>
+            <input type="text" class="feedback-input" placeholder="Kontaktoni me specialistët tanë">
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            © 2023 Match with Your Future. Të gjitha të drejtat të rezervuara.
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for tab navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabItems = document.querySelectorAll('.tab-item');
+            
+            tabItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabItems.forEach(tab => tab.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Here you would typically show the corresponding content
+                    // For this demo, we'll just keep the current view
+                });
+            });
+            
+            // Animation for test cards
+            const testCards = document.querySelectorAll('.test-card');
+            testCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transition = 'all 0.3s ease';
+                    card.style.transform = 'translateY(0)';
+                    card.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
